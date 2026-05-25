@@ -1,17 +1,34 @@
-import { NextResponse } from 'next/server'
-import { seedHospitals } from '@/lib/data'
-
-// In-memory store (would be MongoDB in production)
-let hospitals = seedHospitals.map((h, i) => ({ ...h, _id: String(i + 1) }))
+import { connectDB } from "../../../lib/mongodb";
+import Hospital from "../../../models/Hospital";
 
 export async function GET() {
   try {
-    return NextResponse.json(hospitals)
-  } catch (error) {
-    console.error('Error fetching hospitals:', error)
-    return NextResponse.json(
-      { message: 'Failed to fetch hospitals' },
+    await connectDB();
+
+    let hospitals = await Hospital.find();
+
+    if (hospitals.length === 0) {
+      await Hospital.create([
+        {
+          name: "Apollo Hospital",
+          city: "Bangalore",
+          specialization: "Cardiology",
+        },
+        {
+          name: "Manipal Hospital",
+          city: "Mysore",
+          specialization: "Neurology",
+        },
+      ]);
+
+      hospitals = await Hospital.find();
+    }
+
+    return Response.json(hospitals);
+  } catch (error: any) {
+    return Response.json(
+      { error: error.message },
       { status: 500 }
-    )
+    );
   }
 }
