@@ -10,3 +10,8 @@ export async function GET() {
   } catch (error) {
     console.error('Error fetching hospitals:', error)
     return NextResponse.json(
+      { message: 'Failed to fetch hospitals' },
+      { status: 500 }
+    )
+  }
+}
