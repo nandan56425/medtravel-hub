@@ -14,6 +14,11 @@ export async function GET() {
           city: "Bangalore",
           specialization: "Cardiology",
         },
+        {
+          name: "Manipal Hospital",
+          city: "Mysore",
+          specialization: "Neurology",
+        },
       ]);
 
       hospitals = await Hospital.find();
