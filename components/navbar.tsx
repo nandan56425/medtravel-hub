@@ -49,7 +49,7 @@ export function Navbar() {
               className="object-contain"
            />
             <div className="flex flex-col">
-              <span className="font-bold text-lg text-foreground">MedTravel Hub</span>
+              <span className="font-bold text-lg text-foreground">MedTravel</span>
               <span className="text-xs text-muted-foreground hidden sm:block">Where Healing Meets Heritage</span>
             </div>
           </Link>
