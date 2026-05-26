@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/treatments', label: 'Treatments' },
   { href: '/enquiry', label: 'Contact' },
   { href: '/post-care', label: 'Post-Care' },
+  { href: '/stay-recovery', label: 'Stay & Recovery' },
 ]
 
 export function Navbar() {
