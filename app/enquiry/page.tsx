@@ -465,6 +465,6 @@ export default function EnquiryPage() {
         </div>
       </section>
     </main>
-      </ProtectedRoute>
+   </ProtectedRoute>
   )
 }
