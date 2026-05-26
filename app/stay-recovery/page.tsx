@@ -132,7 +132,12 @@ export default function StayRecoveryPage() {
                     </CardContent>
                   </Card>
                 </motion.div>
-              ))}
+              ))
+) : (
+  <p className="text-center col-span-full">
+    No hotels found.
+  </p>
+)}
 
             </div>
           </div>
