@@ -196,7 +196,9 @@ if (rememberMe) {
 setSuccess(true)
 
 // Redirect to hospitals after login
-setTimeout(() => router.push("/hospitals"), 1500)
+setTimeout(() => {
+  window.location.href = "/hospitals"
+}, 1500)
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed")
     } finally {
@@ -249,8 +251,13 @@ setTimeout(() => router.push("/hospitals"), 1500)
       // Store token
       localStorage.setItem("token", data.token)
 
-      setSuccess(true)
-      setTimeout(() => router.push("/"), 1500)
+      localStorage.setItem("isLoggedIn", "true")
+
+setSuccess(true)
+
+setTimeout(() => {
+  window.location.href = "/hospitals"
+}, 1500)
     } catch (err) {
       setError(err instanceof Error ? err.message : "Registration failed")
     } finally {
