@@ -152,7 +152,8 @@ export default function StayRecoveryPage() {
           </div>
         </section>
 
-      </main>
+        </main>
+      </>  
     </ProtectedRoute>
   )
 }
