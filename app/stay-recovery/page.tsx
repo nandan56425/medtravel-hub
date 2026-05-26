@@ -25,6 +25,7 @@ const hotels = [
     amenities: ['WiFi', 'Airport Pickup', 'Room Service'],
     rating: 4.5,
   },
+
   {
     name: 'Royal Orchid Metropole',
     hospital: 'Manipal Hospital',
@@ -34,6 +35,7 @@ const hotels = [
     amenities: ['Breakfast', 'WiFi', 'Medical Assistance'],
     rating: 4.6,
   },
+
   {
     name: 'Sandesh The Prince',
     hospital: 'Narayana Multispeciality Hospital',
@@ -42,6 +44,76 @@ const hotels = [
     price: '₹3,800/night',
     amenities: ['24/7 Support', 'WiFi', 'Restaurant'],
     rating: 4.4,
+  },
+
+  {
+    name: 'The Atrium Boutique Hotel',
+    hospital: 'Manipal Hospital',
+    distance: '1 km',
+    contact: '+91 76761 39092',
+    price: '₹3,200/night',
+    amenities: ['WiFi', 'Parking', 'Breakfast'],
+    rating: 3.9,
+  },
+
+  {
+    name: 'Radisson Blu Plaza Hotel',
+    hospital: 'Apollo BGS Hospital',
+    distance: '3.5 km',
+    contact: '+91 821 710 1234',
+    price: '₹7,800/night',
+    amenities: ['Luxury Rooms', 'Pool', 'Spa'],
+    rating: 4.5,
+  },
+
+  {
+    name: 'Hotel Continental Inn & Suites',
+    hospital: 'Narayana Multispeciality Hospital',
+    distance: '2.4 km',
+    contact: '+91 81053 79846',
+    price: '₹3,000/night',
+    amenities: ['Free WiFi', 'Room Service', 'Parking'],
+    rating: 4.5,
+  },
+
+  {
+    name: 'The Quorum Hotel',
+    hospital: 'Apollo BGS Hospital',
+    distance: '2.8 km',
+    contact: '+91 821 429 2777',
+    price: '₹3,600/night',
+    amenities: ['Restaurant', 'Conference Hall', 'WiFi'],
+    rating: 3.9,
+  },
+
+  {
+    name: 'Regenta Central Herald',
+    hospital: 'Manipal Hospital',
+    distance: '2.1 km',
+    contact: '+91 91489 99012',
+    price: '₹4,100/night',
+    amenities: ['Gym', 'Restaurant', 'Airport Pickup'],
+    rating: 4.2,
+  },
+
+  {
+    name: 'The Mysore Grand',
+    hospital: 'Apollo BGS Hospital',
+    distance: '2.7 km',
+    contact: '+91 821 000 0000',
+    price: '₹3,400/night',
+    amenities: ['Family Rooms', 'WiFi', 'Parking'],
+    rating: 4.6,
+  },
+
+  {
+    name: 'Hotel Shine International',
+    hospital: 'Manipal Hospital',
+    distance: '1.5 km',
+    contact: '+91 98453 44888',
+    price: '₹2,900/night',
+    amenities: ['Budget Stay', 'AC Rooms', 'WiFi'],
+    rating: 4.7,
   },
 ]
 
