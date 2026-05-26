@@ -1,5 +1,6 @@
 'use client'
 
+import ProtectedRoute from '@/components/ProtectedRoute'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import useSWR from 'swr'
