@@ -15,11 +15,11 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'MedTravel Hub | Where Healing Meets Heritage',
+  title: 'MedTravel | Where Healing Meets Heritage',
   description: 'Premium medical tourism connecting international patients from 87+ countries to world-class healthcare in Mysuru, India. Experience 90% cost savings with minimal wait times.',
   keywords: ['medical tourism', 'Mysuru healthcare', 'India hospitals', 'affordable surgery', 'ayurveda', 'wellness retreat'],
   openGraph: {
-    title: 'MedTravel Hub | Where Healing Meets Heritage',
+    title: 'MedTravel | Where Healing Meets Heritage',
     description: 'World-class healthcare in Mysuru, India. 90% cost savings vs Western nations.',
     type: 'website',
   },
