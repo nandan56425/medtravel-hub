@@ -128,7 +128,7 @@ function PasswordStrength({ password }: { password: string }) {
 }
 
 export default function LoginPage() {
-  const router = useRouter()
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<"login" | "signup">("login")
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
@@ -183,14 +183,20 @@ export default function LoginPage() {
         throw new Error(data.error || "Login failed")
       }
 
-      // Store token
-      localStorage.setItem("token", data.token)
-      if (rememberMe) {
-        localStorage.setItem("userEmail", loginEmail)
-      }
+    // Store token
+localStorage.setItem("token", data.token)
 
-      setSuccess(true)
-      setTimeout(() => router.push("/"), 1500)
+// ADD THIS
+localStorage.setItem("isLoggedIn", "true")
+
+if (rememberMe) {
+  localStorage.setItem("userEmail", loginEmail)
+}
+
+setSuccess(true)
+
+// Redirect to hospitals after login
+setTimeout(() => router.push("/hospitals"), 1500)
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed")
     } finally {
@@ -276,7 +282,7 @@ export default function LoginPage() {
                 </svg>
               </div>
               <div>
-                <h1 className="text-2xl font-bold">MedTravel Hub</h1>
+                <h1 className="text-2xl font-bold">MedTravel</h1>
                 <p className="text-sm text-white/70">Mysuru, India</p>
               </div>
             </div>
