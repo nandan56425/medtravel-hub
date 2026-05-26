@@ -10,18 +10,25 @@ export default function ProtectedRoute({
 }) {
   const router = useRouter()
 
+  const [loading, setLoading] = useState(true)
   const [authorized, setAuthorized] = useState(false)
 
   useEffect(() => {
     const isLoggedIn =
       localStorage.getItem('isLoggedIn')
 
-    if (!isLoggedIn) {
-      router.push('/login')
-    } else {
+    if (isLoggedIn === 'true') {
       setAuthorized(true)
+    } else {
+      router.push('/login')
     }
+
+    setLoading(false)
   }, [router])
+
+  if (loading) {
+    return null
+  }
 
   if (!authorized) {
     return null
