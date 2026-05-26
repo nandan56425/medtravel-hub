@@ -1,5 +1,6 @@
 'use client'
 
+import ProtectedRoute from '@/components/ProtectedRoute'
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
@@ -83,6 +84,7 @@ export default function DoctorsPage() {
   }, [doctors, searchQuery, selectedHospital, selectedSpecialty, selectedLanguage, videoOnly])
 
   return (
+    <ProtectedRoute>
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 bg-gradient-to-br from-primary/10 via-secondary to-background overflow-hidden">
@@ -312,5 +314,6 @@ export default function DoctorsPage() {
         </div>
       </section>
     </main>
+      </ProtectedRoute>
   )
 }
