@@ -356,7 +356,7 @@ setTimeout(() => {
             </svg>
           </div>
           <div>
-            <h1 className="text-lg font-bold">MedTravel Hub</h1>
+            <h1 className="text-lg font-bold">MedTravel</h1>
             <p className="text-xs text-white/70">Where Healing Meets Heritage</p>
           </div>
         </div>
