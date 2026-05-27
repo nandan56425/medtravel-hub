@@ -48,13 +48,16 @@ const enquirySchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   phone: z.string().min(10),
-  country: z.string().min(1),
-  treatment: z.string().min(1),
-  hospital: z.string().min(1),
+
+  country: z.string().optional(),
+  treatment: z.string().optional(),
+  hospital: z.string().optional(),
   preferredDate: z.string().optional(),
-  needsVisa: z.boolean(),
-  needsAirportTransfer: z.boolean(),
-  needsVideoConsult: z.boolean(),
+
+  needsVisa: z.boolean().optional(),
+  needsAirportTransfer: z.boolean().optional(),
+  needsVideoConsult: z.boolean().optional(),
+
   message: z.string().optional(),
 })
 
