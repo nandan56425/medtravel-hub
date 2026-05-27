@@ -43,7 +43,6 @@ import {
 import { Switch } from '@/components/ui/switch'
 
 import { seedTreatments, seedHospitals } from '@/lib/data'
-import { enquiryAPI } from '@/lib/api'
 
 const enquirySchema = z.object({
   name: z.string().min(2),
@@ -116,17 +115,33 @@ export default function EnquiryPage() {
   })
 
   const onSubmit = async (
-    data: EnquiryFormData
-  ) => {
-    setIsSubmitting(true)
+  data: EnquiryFormData
+) => {
 
-    try {
-      await enquiryAPI.submit({
-        ...data,
-        preferredDate:
-          data.preferredDate ||
-          new Date().toISOString(),
-      })
+  setIsSubmitting(true)
+
+  try {
+
+    const response = await fetch(
+      '/api/enquiries',
+      {
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+        body: JSON.stringify({
+          ...data,
+
+          preferredDate:
+            data.preferredDate ||
+            new Date().toISOString(),
+        }),
+      }
+    )
+
+    if (response.ok) {
 
       setIsSubmitted(true)
 
@@ -135,17 +150,29 @@ export default function EnquiryPage() {
       )
 
       reset()
-    } catch (error) {
-      console.error(error)
+
+    } else {
 
       toast.error(
-        'Failed to submit enquiry.'
+        'Failed to submit enquiry'
       )
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
+    }
+
+  } catch (error) {
+
+    console.error(error)
+
+    toast.error(
+      'Something went wrong'
+    )
+
+  } finally {
+
+    setIsSubmitting(false)
+
+  }
+}
   const needsVisa = watch('needsVisa')
   const needsAirportTransfer = watch(
     'needsAirportTransfer'
