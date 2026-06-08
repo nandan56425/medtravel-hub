@@ -54,9 +54,7 @@ function generateToken(userId: string, email: string): string {
   return Buffer.from(JSON.stringify(payload)).toString('base64')
 }
 
-export async function POST(
-  req: Request
-) {
+export async function POST(req: Request) {
   try {
 
     await connectDB()
@@ -116,42 +114,4 @@ export async function POST(
   }
 }
 
-    // Find user by email
-    const user = users.find(u => u.email.toLowerCase() === email.toLowerCase())
-    
-    if (!user) {
-      return NextResponse.json(
-        { error: 'Invalid email or password' },
-        { status: 401 }
-      )
-    }
-
-    // Verify password
-    if (!verifyPassword(password, user.password)) {
-      return NextResponse.json(
-        { error: 'Invalid email or password' },
-        { status: 401 }
-      )
-    }
-
-    // Update last login
-    user.lastLogin = new Date().toISOString()
-
-    // Generate token
-    const token = generateToken(user._id, user.email)
-
-    // Return user without password
-    const { password: _, ...userWithoutPassword } = user
-
-    return NextResponse.json({
-      message: 'Login successful',
-      token,
-      user: userWithoutPassword,
-    })
-  } catch {
-    return NextResponse.json(
-      { error: 'Login failed. Please try again.' },
-      { status: 500 }
-    )
-  }
-}
+  
