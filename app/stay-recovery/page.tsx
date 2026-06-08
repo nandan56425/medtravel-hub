@@ -1,6 +1,7 @@
 'use client'
 
 import ProtectedRoute from '@/components/ProtectedRoute'
+import { useState } from 'react'
 import { Navbar } from '@/components/navbar'
 import { motion } from 'framer-motion'
 import {
@@ -21,6 +22,8 @@ const fetcher = (url: string) =>
 
 export default function StayRecoveryPage() {
 
+  const [selectedHotel, setSelectedHotel] = useState<any>(null)
+  
   const {
     data: hotels,
     error,
@@ -124,7 +127,9 @@ export default function StayRecoveryPage() {
                           {hotel.price}
                         </span>
 
-                        <Button>
+                        <Button
+                          onClick={() => setSelectedHotel(hotel)}
+                        >
                           Contact Hotel
                         </Button>
                       </div>
@@ -142,6 +147,77 @@ export default function StayRecoveryPage() {
             </div>
           </div>
         </section>
+          {selectedHotel && (
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+
+    <div className="bg-background rounded-xl p-6 w-[90%] max-w-md shadow-xl">
+
+      <h2 className="text-2xl font-bold mb-4">
+        {selectedHotel.name}
+      </h2>
+
+      <div className="space-y-3">
+
+        <p>
+          <strong>Hospital:</strong>{" "}
+          {selectedHotel.hospital}
+        </p>
+
+        <p>
+          <strong>Distance:</strong>{" "}
+          {selectedHotel.distance}
+        </p>
+
+        <p>
+          <strong>Phone:</strong>{" "}
+          {selectedHotel.contact}
+        </p>
+
+        <div className="flex gap-2">
+
+          <Button
+            variant="outline"
+            onClick={() => {
+              navigator.clipboard.writeText(
+                selectedHotel.contact
+              )
+
+              alert(
+                'Phone number copied!'
+              )
+            }}
+          >
+            Copy Number
+          </Button>
+
+          <Button
+            asChild
+          >
+            <a
+              href={`tel:${selectedHotel.contact}`}
+            >
+              Call Now
+            </a>
+          </Button>
+
+        </div>
+
+      </div>
+
+      <Button
+        variant="outline"
+        className="w-full mt-6"
+        onClick={() =>
+          setSelectedHotel(null)
+        }
+      >
+        Close
+      </Button>
+
+    </div>
+
+  </div>
+)}
 
         </main>
       </>  
