@@ -9,8 +9,8 @@ const hotels = [
     price: '₹4,500/night',
     amenities: ['WiFi', 'Airport Pickup', 'Room Service'],
     rating: 4.5,
-    email: "reservations@hotel.com",
-    address: "Mysuru, Karnataka",
+    email: "h9306-re@accor.com",
+    address: "Nelson Mandela Circle, Mysuru, Karnataka",
   },
 
   {
@@ -21,8 +21,8 @@ const hotels = [
     price: '₹5,000/night',
     amenities: ['Breakfast', 'WiFi', 'Medical Assistance'],
     rating: 4.6,
-    email: "reservations@hotel.com",
-    address: "Mysuru, Karnataka",
+    email: "gm.metropole@royalorchidhotels.com",
+    address: "Lakshmipuram, Mysuru, Karnataka",
   },
 
   {
@@ -33,8 +33,8 @@ const hotels = [
     price: '₹3,800/night',
     amenities: ['24/7 Support', 'WiFi', 'Restaurant'],
     rating: 4.4,
-    email: "reservations@hotel.com",
-    address: "Mysuru, Karnataka",
+    email: "info@sandeshtheprince.com",
+    address: "Nazarbad, Mysuru, Karnataka",
   },
 
   {
@@ -45,8 +45,8 @@ const hotels = [
     price: '₹7,800/night',
     amenities: ['Luxury Rooms', 'Pool', 'Spa'],
     rating: 4.5,
-    email: "reservations@hotel.com",
-    address: "Mysuru, Karnataka",
+    email: "writetome@rdmysore.com",
+    address: "JC Nagar, Mysuru, Karnataka",
   },
 
   {
@@ -57,8 +57,8 @@ const hotels = [
     price: '₹3,200/night',
     amenities: ['WiFi', 'Parking', 'Breakfast'],
     rating: 3.9,
-    email: "reservations@hotel.com",
-    address: "Mysuru, Karnataka",
+    email: "enquiry@theatriumhotel.in",
+    address: "Belavata, Mysuru, Karnataka",
   },
 
   {
@@ -69,8 +69,8 @@ const hotels = [
     price: '₹3,000/night',
     amenities: ['Free WiFi', 'Room Service', 'Parking'],
     rating: 4.5,
-    email: "reservations@hotel.com",
-    address: "Mysuru, Karnataka",
+    email: "reservations@continentalinn.com",
+    address: "Nazarbad, Mysuru, Karnataka",
   },
 
   {
@@ -81,8 +81,8 @@ const hotels = [
     price: '₹3,600/night',
     amenities: ['Restaurant', 'Conference Hall', 'WiFi'],
     rating: 3.9,
-    email: "reservations@hotel.com",
-    address: "Mysuru, Karnataka",
+    email: "resv.mys@thequorumhotel.in",
+    address: "Shivarampet, Mysuru, Karnataka",
   },
 
   {
@@ -93,8 +93,8 @@ const hotels = [
     price: '₹4,100/night',
     amenities: ['Gym', 'Restaurant', 'Airport Pickup'],
     rating: 4.2,
-    email: "reservations@hotel.com",
-    address: "Mysuru, Karnataka",
+    email: "gm.metropole@royalorchidhotels.com",
+    address: "Bannimantap, Mysuru, Karnataka",
   },
 ]
 
